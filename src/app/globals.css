@@ -35,6 +35,30 @@ body {
 .content{
   display: flex;
   flex-direction: column;
-  padding: 24px;
   margin: 0;
+}
+
+.bold{
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.btn {
+  background-color: #1A1A1A;
+  border: 1px solid #242424;
+  border-radius: 4px;
+  padding: 10px 20px;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease,
+              transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #1F1F1F;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
