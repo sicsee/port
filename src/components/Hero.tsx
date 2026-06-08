@@ -48,15 +48,18 @@ export default function Hero() {
 
       <div className="flex flex-col sm:flex-row gap-3 pt-4">
         <Link href="/about">
-          <Button variant="secondary" size="sm">
+          <Button variant="secondary" size="sm" className="w-full sm:w-auto">
             Read More
           </Button>
         </Link>
-        <button onClick={handleDownloadCV}>
-          <Button variant="secondary" size="sm">
-            Download CV
-          </Button>
-        </button>
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={handleDownloadCV}
+          className="w-full sm:w-auto"
+        >
+          Download CV
+        </Button>
       </div>
     </section>
   );

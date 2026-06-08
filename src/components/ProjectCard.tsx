@@ -48,17 +48,21 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {/* Links */}
         <div className="flex gap-2 pt-4">
           {project.link && (
-            <Link href={project.link} target="_blank">
-              <button className="flex-1 px-3 py-2 text-sm bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded transition-colors">
-                View
-              </button>
+            <Link
+              href={project.link}
+              target="_blank"
+              className="flex-1 px-3 py-2 text-sm bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded transition-colors text-center"
+            >
+              View
             </Link>
           )}
           {project.github && (
-            <Link href={project.github} target="_blank">
-              <button className="flex-1 px-3 py-2 text-sm bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded transition-colors">
-                GitHub
-              </button>
+            <Link
+              href={project.github}
+              target="_blank"
+              className="flex-1 px-3 py-2 text-sm bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded transition-colors text-center"
+            >
+              GitHub
             </Link>
           )}
         </div>
