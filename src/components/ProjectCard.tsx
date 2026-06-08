@@ -7,9 +7,9 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="group border border-white/10 rounded-lg overflow-hidden hover:border-white/30 transition-colors duration-300">
+    <div className="group border border-black/10 rounded-lg overflow-hidden hover:border-black/30 transition-colors duration-300">
       {/* Image */}
-      <div className="relative w-full aspect-video bg-gradient-to-br from-white/5 to-white/10 overflow-hidden">
+      <div className="relative w-full aspect-video bg-gradient-to-br from-black/5 to-black/10 overflow-hidden">
         {project.image ? (
           <img
             src={project.image}
@@ -17,7 +17,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-white/30">
+          <div className="w-full h-full flex items-center justify-center text-black/30">
             No image
           </div>
         )}
@@ -25,11 +25,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Content */}
       <div className="p-4 sm:p-6 space-y-3">
-        <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-white/80 transition-colors">
+        <h3 className="text-lg sm:text-xl font-bold text-black group-hover:text-black/80 transition-colors">
           {project.title}
         </h3>
 
-        <p className="text-sm sm:text-base text-white/60 leading-relaxed">
+        <p className="text-sm sm:text-base text-black/60 leading-relaxed">
           {project.description}
         </p>
 
@@ -38,7 +38,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2 py-1 text-xs sm:text-sm bg-white/5 border border-white/10 text-white/70 rounded hover:bg-white/10 transition-colors"
+              className="px-2 py-1 text-xs sm:text-sm bg-black/5 border border-black/10 text-black/70 rounded hover:bg-black/10 transition-colors"
             >
               {tag}
             </span>
@@ -51,7 +51,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Link
               href={project.link}
               target="_blank"
-              className="flex-1 px-3 py-2 text-sm bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded transition-colors text-center"
+              className="flex-1 px-3 py-2 text-sm bg-black/10 hover:bg-black/20 border border-black/20 text-black rounded transition-colors text-center"
             >
               View
             </Link>
@@ -60,7 +60,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Link
               href={project.github}
               target="_blank"
-              className="flex-1 px-3 py-2 text-sm bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded transition-colors text-center"
+              className="flex-1 px-3 py-2 text-sm bg-black/10 hover:bg-black/20 border border-black/20 text-black rounded transition-colors text-center"
             >
               GitHub
             </Link>
