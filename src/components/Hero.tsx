@@ -1,30 +1,62 @@
+"use client";
+
 import Link from "next/link";
+import Button from "./Button";
 
 export default function Hero() {
+  const handleDownloadCV = async () => {
+    try {
+      const response = await fetch("/api/download-cv");
+      if (!response.ok) throw new Error("Download failed");
+
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Nicolas-Godinho-CV.pdf";
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+    } catch (error) {
+      console.error("Error downloading CV:", error);
+      alert("Failed to download CV. Please try again.");
+    }
+  };
+
   return (
-    <section className="mt-25 space-y-5 md:max-w-4xl md:text-lg md:px-10 lg:px-20">
-      <h1 className="font-bold text-white text-5xl mb-10">Portfolio</h1>
-      <p className="text-white/80 leading-relaxed">
-        My name is <span className="bold">Nicolas Godinho</span>, and I'm a{" "}
-        <span className="bold">Software Development</span> student.
-      </p>
+    <section className="space-y-6 md:space-y-8 md:max-w-4xl">
+      <h1 className="font-bold text-white text-4xl sm:text-5xl lg:text-6xl leading-tight">
+        Portfolio
+      </h1>
 
-      <p className="text-white/80 leading-relaxed mt-4">
-        I enjoy building web applications with modern technologies such as{" "}
-        <span className="bold">React</span>,{" "}
-        <span className="bold">Next.js</span>,{" "}
-        <span className="bold">JavaScript</span>,{" "}
-        <span className="bold">Laravel</span>, and{" "}
-        <span className="bold">PHP</span>.
-      </p>
+      <div className="space-y-4 text-base sm:text-lg">
+        <p className="text-white/80 leading-relaxed">
+          My name is <span className="font-semibold text-white">Nicolas Godinho</span>, and I'm a{" "}
+          <span className="font-semibold text-white">Software Development</span> student.
+        </p>
 
-      <div className="flex items-center gap-3">
+        <p className="text-white/80 leading-relaxed">
+          I enjoy building web applications with modern technologies such as{" "}
+          <span className="font-semibold text-white">React</span>,{" "}
+          <span className="font-semibold text-white">Next.js</span>,{" "}
+          <span className="font-semibold text-white">JavaScript</span>,{" "}
+          <span className="font-semibold text-white">Laravel</span>, and{" "}
+          <span className="font-semibold text-white">PHP</span>.
+        </p>
+      </div>
+
+      <div className="flex flex-col sm:flex-row gap-3 pt-4">
         <Link href="/about">
-          <button className="btn text-sm">read more</button>
+          <Button variant="secondary" size="sm">
+            Read More
+          </Button>
         </Link>
-        <Link href="/download">
-          <button className="btn text-sm">download cv</button>
-        </Link>
+        <button onClick={handleDownloadCV}>
+          <Button variant="secondary" size="sm">
+            Download CV
+          </Button>
+        </button>
       </div>
     </section>
   );
