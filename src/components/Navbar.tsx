@@ -8,44 +8,44 @@ export default function Navbar() {
 
   return (
     <nav>
-      <ul className="flex items-center gap-4 uppercase text-sm">
+      <ul className="flex items-center gap-4 uppercase">
         <li>
           <Link
             href="/"
             className={
               pathname === "/"
-                ? "text-black font-semibold"
-                : "text-black/50 hover:text-black transition-all ease-linear"
+                ? "text-white"
+                : "text-white/50 hover:text-white transition-all ease-linear"
             }
           >
             Home
           </Link>
         </li>
 
-        <span className="text-black/30 text-lg">|</span>
+        <span className="text-white/50 text-xl">|</span>
 
         <li>
           <Link
             href="/projects"
             className={
               pathname === "/projects"
-                ? "text-black font-semibold"
-                : "text-black/50 hover:text-black transition-all ease-linear"
+                ? "text-white"
+                : "text-white/50  hover:text-white transition-all ease-linear"
             }
           >
             Projects
           </Link>
         </li>
 
-        <span className="text-black/30 text-lg">|</span>
+        <span className="text-white/50 text-xl">|</span>
 
         <li>
           <Link
             href="/about"
             className={
               pathname === "/about"
-                ? "text-black font-semibold"
-                : "text-black/50 hover:text-black transition-all ease-linear"
+                ? "text-white"
+                : "text-white/50 hover:text-white transition-all ease-linear"
             }
           >
             About

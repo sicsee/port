@@ -25,37 +25,61 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-start space-y-12 md:space-y-16 max-w-3xl">
-      {/* Main heading with gradient effect */}
-      <div className="space-y-6">
-        <h1 className="font-bold text-5xl sm:text-6xl lg:text-7xl leading-tight text-black">
-          Nicolas <span className="bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">Godinho</span>
+    <section className="space-y-12 md:space-y-16">
+      {/* Main intro */}
+      <div className="space-y-6 md:max-w-4xl">
+        <h1 className="font-bold text-white text-5xl sm:text-6xl lg:text-7xl leading-tight">
+          Portfolio
         </h1>
-        <p className="text-xl sm:text-2xl text-gray-600 font-light leading-relaxed max-w-2xl">
-          Software Development student building modern web applications with React, Next.js, Laravel, and beyond.
+        <p className="text-white/80 leading-relaxed text-base sm:text-lg">
+          My name is <span className="font-semibold text-white">Nicolas Godinho</span>, and I'm a{" "}
+          <span className="font-semibold text-white">Software Development</span> student passionate about building modern web applications.
+        </p>
+
+        <p className="text-white/80 leading-relaxed text-base sm:text-lg">
+          I specialize in full-stack development with <span className="font-semibold text-white">React</span>,{" "}
+          <span className="font-semibold text-white">Next.js</span>,{" "}
+          <span className="font-semibold text-white">TypeScript</span>,{" "}
+          <span className="font-semibold text-white">Laravel</span>, and{" "}
+          <span className="font-semibold text-white">PHP</span>.
         </p>
       </div>
 
-      {/* Featured stats or quick info */}
-      <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 text-sm text-gray-600">
-        <div>
-          <p className="text-gray-400 mb-1">Focus</p>
-          <p className="text-black font-medium">Full-stack Development</p>
+      {/* Featured info cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="border border-white/10 rounded-lg p-6 hover:border-white/30 transition-colors">
+          <p className="text-white/50 text-sm mb-2">Focus</p>
+          <p className="text-white font-semibold text-lg">Full-Stack Development</p>
         </div>
-        <div>
-          <p className="text-gray-400 mb-1">Location</p>
-          <p className="text-black font-medium">Brazil</p>
+        <div className="border border-white/10 rounded-lg p-6 hover:border-white/30 transition-colors">
+          <p className="text-white/50 text-sm mb-2">Specialization</p>
+          <p className="text-white font-semibold text-lg">Web Applications</p>
         </div>
-        <div>
-          <p className="text-gray-400 mb-1">Available</p>
-          <p className="text-black font-medium">For Projects</p>
+        <div className="border border-white/10 rounded-lg p-6 hover:border-white/30 transition-colors">
+          <p className="text-white/50 text-sm mb-2">Status</p>
+          <p className="text-white font-semibold text-lg">Available for Work</p>
+        </div>
+      </div>
+
+      {/* Tech stack highlight */}
+      <div className="space-y-4">
+        <h2 className="text-white text-xl font-semibold">Tech Stack</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {["React", "Next.js", "TypeScript", "Tailwind", "Laravel", "PHP", "Node.js", "PostgreSQL"].map((tech) => (
+            <div
+              key={tech}
+              className="border border-white/10 rounded px-4 py-2 text-center text-white/70 hover:text-white hover:border-white/30 transition-all"
+            >
+              {tech}
+            </div>
+          ))}
         </div>
       </div>
 
       {/* CTA Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 pt-4">
         <Link href="/projects">
-          <Button variant="primary" size="sm" className="px-6">
+          <Button variant="primary" size="sm">
             View Projects
           </Button>
         </Link>
@@ -63,15 +87,14 @@ export default function Hero() {
           variant="secondary"
           size="sm"
           onClick={handleDownloadCV}
-          className="px-6"
         >
           Download CV
         </Button>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="hidden md:block absolute bottom-10 left-0 text-gray-400 text-sm animate-bounce">
-        <p>↓ Scroll to explore</p>
+        <Link href="/about">
+          <Button variant="secondary" size="sm">
+            Learn More
+          </Button>
+        </Link>
       </div>
     </section>
   );
