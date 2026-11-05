@@ -45,7 +45,7 @@ function EducationItem({ item, index }: { item: Education; index: number }) {
 
 export function Experience() {
   return (
-    <section id="experience" className="border-t border-neutral-700 py-4">
+    <section id="experience" className="border-t border-neutral-700 py-5 sm:py-6">
       <SectionHeader title="experience" className="mb-4" />
       <Reveal className="reveal-delay-1">
         <ol className="timeline">
@@ -60,9 +60,9 @@ export function Experience() {
 
 export function Education() {
   return (
-    <section id="education" className="border-t border-neutral-700 py-4">
+    <section id="education" className="border-t border-neutral-700 py-5 sm:py-6">
       <SectionHeader title="education" className="mb-4" />
-      <ul className="grid gap-[var(--gap-relaxed)]">
+      <ul className="grid gap-[var(--gap-loose)]">
         {education.map((item, index) => (
           <EducationItem key={item.degree} item={item} index={index} />
         ))}

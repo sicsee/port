@@ -12,8 +12,8 @@ const contacts = [
 
 export function Contact() {
   return (
-    <section id="contact" className="border-t border-neutral-700 py-4">
-      <SectionHeader title="contact" className="mb-3" />
+    <section id="contact" className="border-t border-neutral-700 py-5 sm:py-6">
+      <SectionHeader title="contact" className="mb-4" />
       <p className="mb-4 text-neutral-400">you can find me at:</p>
       <ul className="flex flex-wrap items-start gap-[var(--gap-tight)]" aria-label="Contact links">
         {contacts.map((contact, index) => (

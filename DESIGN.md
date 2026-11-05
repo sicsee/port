@@ -105,9 +105,10 @@ A near-monochrome system with two states: the dark terminal (default) and a pape
 **Character:** a typewriter with a stamp — humanist, tall-x body copy reads clean and modest; headings are punched dot-matrix plates that feel printed by an old matrix printer. Legibility lives in the body; personality lives in the display.
 
 ### Hierarchy
-- **Display** (Doto 900, 1.125rem / 1.55, tracking 0.05em): section headings (`* experience`), chip labels. The hero title scales the same voice up to 1.5–1.875rem (`text-2xl sm:text-3xl`), leading-tight.
-- **Title** (Atkinson 700, ~1.1rem): project titles, work roles — plain bold, no display font.
-- **Body** (Atkinson 400, 1rem / 1.625): paragraphs, descriptions, blurbs; max line length ≈ the 48rem container keeps ~70ch.
+- **Hero** (Doto 900, 1.875rem → 2.25rem / `text-3xl sm:text-4xl`, leading-tight): the single display-scale title of the page, with the typed boot-in entrance.
+- **Display** (Doto 900): section headings (`* experience`) at 1.375rem, card/project titles (h3) at 1.25rem, chip labels, stacked metric numbers (h4 support tier 1.125rem). Case-study h1 at 1.5rem (`text-2xl`).
+- **Title** (Atkinson 700, ~1.1rem): plain-bold secondary names — but Doto h3 wins where the role warrants a plate.
+- **Body** (Atkinson 400, 1rem / 1.625): paragraphs, descriptions, blurbs; max measured at 65ch in long-form prose.
 - **Label** (mono, 0.65–0.8rem, wide tracking): counters (`02 / 06`), timestamps, ramp hints, placeholder paths like `~/projects/slug`.
 
 ### Named Rules
@@ -116,7 +117,7 @@ A near-monochrome system with two states: the dark terminal (default) and a pape
 
 ## Layout
 
-Single centered column, `max-w-3xl` (48rem) with 16px side gutters, on every route. Vertical rhythm: `space-y-4` (16px) between top-level sections; each section keeps its own small internal breathing (border-t + ~16px padding). Sections are separated by full-width-feel 1px rules in Hairline — never whitespace alone, never boxes.
+Single centered column, `max-w-3xl` (48rem) with 16px side gutters, on every route. Vertical rhythm: `space-y-4` (16px) between top-level sections; each section keeps `py-5 sm:py-6` of internal breathing under a full-width 1px hairline rule — sections separate with real air (hairline + padding, never whitespace alone, never boxes). Section titles carry `mb-4`.
 
 `/projects` breaks the scroll model on purpose: a fixed-viewport stage (`h-dvh`, `overflow-hidden`) where the 3D coverflow carousel owns the middle; page furniture compresses so the tab never scrolls.
 
@@ -144,7 +145,7 @@ Near-sharp geometry: radii live in the 2–6px range (chips 4px, case-image cont
 - **Style:** 0.75rem Doto marker `*` raised 2px above baseline + 1.125rem Doto title; muted `##`/heavy marks belong to the old generation — current system uses the bare prompt.
 
 ### Navigation
-- **Style:** marker-font handle on the left (muted → white hover); mono-free plain links right (0.875rem, muted → white); no underlines, no pills, no sticky bar. Theme toggle is text (`theme` → `light`/`dark`), never an icon.
+- **Style:** marker-font handle on the left (muted → white hover); mono-free plain links right (0.875rem, muted → white); no underlines, no pills, no sticky bar. Theme toggle is a **square 7×7 icon chip** (1px hairline border, Lucide Sun/Moon at 14px, hover border→accent) — user decision #polish pass, replacing the former text-only `theme` label.
 
 ### Carousel Slides (signature)
 - **Shape:** 6px radius card, 1px tonal border, 6% currentColor fill; 16/10 aspect.
@@ -152,7 +153,7 @@ Near-sharp geometry: radii live in the 2–6px range (chips 4px, case-image cont
 - **Fallback art:** nonexistent screenshots render a typographic plate (`~/projects/slug` in mono + title in Doto) instead of a broken image.
 
 ### Heatmap
-- 7-row × 12px cell grid, 2px gap; 5-step ramp (`--c0..c4`) — greyscale in dark, Fountain Teal ramp in light; internal scroll only, never page scroll.
+- 7-row × 16px cell grid, 3px gap; 5-step ramp (`--c0..c4`) — greyscale in dark, Fountain Teal ramp in light; window maxes at 365 days with internal scroll only, never page scroll. Use it as the site's biggest proof-of-work block.
 
 ### Buttons
 - The system has **no filled primary button**; every action is a chip/link-tag anchor (see Chips). Hierarchy comes from the accent on hover.

@@ -13,9 +13,9 @@ export default function Home() {
       <Header />
 
       <main className="mx-auto w-full max-w-3xl space-y-4 px-4">
-        <section className="pt-0">
+        <section className="pt-2 sm:pt-4">
           <h1
-            className="print-line font-pixel text-2xl leading-tight font-black tracking-wide sm:text-3xl"
+            className="print-line font-pixel text-3xl leading-tight font-black tracking-wide sm:text-4xl"
             style={{ '--print-steps': site.role.length } as CSSProperties}
           >
             {site.role}
@@ -38,7 +38,7 @@ export default function Home() {
         <Contributions />
       </main>
 
-      <footer className="mx-auto w-full max-w-3xl py-4 px-4">
+      <footer className="mx-auto w-full max-w-3xl pt-8 pb-6 px-4">
         <Footer />
       </footer>
     </>

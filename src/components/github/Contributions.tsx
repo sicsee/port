@@ -97,8 +97,8 @@ export function Contributions() {
   }, [stats]);
 
   return (
-      <section id="contributions" className="border-t border-neutral-700 py-4">
-        <SectionHeader title="contributions" className="mb-3" />
+      <section id="contributions" className="border-t border-neutral-700 py-5 sm:py-6">
+        <SectionHeader title="contributions" className="mb-4" />
         <Reveal className="reveal-delay-1">
           {stats ? (
             <>

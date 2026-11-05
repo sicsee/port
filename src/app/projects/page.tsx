@@ -11,8 +11,8 @@ export default function ProjectsPage() {
     <div className="flex h-dvh flex-col overflow-hidden">
       <Header />
       <main className="relative flex w-full min-h-0 flex-1 flex-col">
-        <div className="mx-auto w-full max-w-3xl px-4 pt-4 pb-2">
-          <h1 className="font-pixel text-lg font-black tracking-wider mb-1">
+        <div className="mx-auto w-full max-w-3xl px-4 pt-5 pb-2">
+          <h1 className="font-pixel text-2xl font-black tracking-wider mb-1">
             * projects
           </h1>
           <p className="text-sm opacity-60">

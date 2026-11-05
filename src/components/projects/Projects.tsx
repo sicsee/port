@@ -12,9 +12,9 @@ export function Projects() {
   const featured = projects.slice(0, FEATURED_COUNT);
 
   return (
-    <section id="projects" className="border-t border-neutral-700 py-4">
+    <section id="projects" className="border-t border-neutral-700 py-5 sm:py-6">
       <SectionHeader title="projects" className="mb-4" />
-      <ul className="grid gap-[var(--gap-loose)]">
+      <ul className="grid gap-[var(--spacing-6)]">
         {featured.map((project, index) => (
           <li key={project.title}>
             <Reveal className={index < 9 ? `reveal-delay-${index + 1}` : "reveal-delay-9"}>
@@ -65,7 +65,7 @@ export function Projects() {
       </ul>
 
       {/* invitation to the projects gallery */}
-      <Reveal className="mt-4 reveal-delay-4">
+      <Reveal className="mt-6 reveal-delay-4">
         <Link
           href="/projects"
           className="tech-tag link-tag inline-flex"
@@ -131,8 +131,8 @@ function SkillChip({ skill, index }: { skill: (typeof skills)[number]; index: nu
 
 export function Skills() {
   return (
-    <section id="skills" className="border-t border-neutral-700 py-4">
-      <SectionHeader title="skills" className="mb-3" />
+    <section id="skills" className="border-t border-neutral-700 py-5 sm:py-6">
+      <SectionHeader title="skills" className="mb-4" />
       <p className="mb-4 text-neutral-400">{skillsIntro}</p>
       <ul className="flex flex-wrap items-start gap-[var(--gap-tight)]" aria-label="Skills">
         {skills.map((skill, index) => (

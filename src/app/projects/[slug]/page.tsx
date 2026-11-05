@@ -105,7 +105,7 @@ export default async function CaseStudyPage({
       <main className="mx-auto w-full max-w-3xl px-4 pt-6 pb-12">
         <Reveal>
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h1 className="font-pixel text-lg font-black tracking-wider">
+            <h1 className="font-pixel text-2xl font-black tracking-wider">
               * {project.slug}
             </h1>
             {study ? <StatusBadge status={study.status} /> : null}

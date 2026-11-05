@@ -12,7 +12,7 @@ const navLinks = [
 
 export function Header() {
   return (
-    <header className="mx-auto w-full max-w-3xl px-4 py-3 flex items-baseline justify-between">
+    <header className="mx-auto w-full max-w-3xl px-4 py-4 flex items-baseline justify-between">
       <Link
         href="/"
         className="marker text-neutral-500 hover:text-white transition-colors"
