@@ -235,8 +235,8 @@ html.light {
     transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* brand glyphs too dark for the dark canvas */
-  .devicon-nextjs-original {
+  /* brand glyphs too dark for the dark canvas (nextjs plain glyph is solid black) */
+  .devicon-nextjs-plain {
     color: var(--heading);
   }
 

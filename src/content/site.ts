@@ -146,7 +146,7 @@ export const skills: Skill[] = [
   },
   {
     name: 'Next.js',
-    icon: 'devicon-nextjs-original',
+    icon: 'devicon-nextjs-plain',
     level: 4,
     blurb: 'my default full stack framework, from routing to deploy.',
     usedIn: [{ title: 'Portfolio v1', slug: 'portfolio-v1' }],
