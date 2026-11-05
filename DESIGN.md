@@ -163,7 +163,7 @@ Near-sharp geometry: radii live in the 2–6px range (chips 4px, case-image cont
 ### Do:
 - **Do** keep everything greyscale at rest; introduce accent only on meaning (hover, selection, current-state, prompt marks).
 - **Do** separate sections with 1px hairlines + a `* title` prompt at ~0.05em tracking.
-- **Do** stagger entrances 50ms apart (50–450ms) with translateY(16px) + fade, `cubic-bezier(0.16, 1, 0.3, 1)`.
+- **Do** stagger entrances 70ms apart (70–630ms) with translateY(16px) + 0.75s fade, `cubic-bezier(0.16, 1, 0.3, 1)`; the hero boot-in runs 1.2s with a 0.6s triple-blink caret.
 - **Do** label machine facts in mono with wide tracking (`02 / 06`, `~/projects/slug`).
 - **Do** let the carousel express depth with transforms/opacity only.
 

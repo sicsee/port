@@ -172,7 +172,7 @@ export function ProjectsCarousel({
               visibility: abs > 2 ? "hidden" : "visible",
               pointerEvents: abs > 2 ? "none" : "auto",
               transition:
-                "transform 600ms cubic-bezier(0.16, 1, 0.3, 1), opacity 600ms ease",
+                "transform 750ms cubic-bezier(0.16, 1, 0.3, 1), opacity 750ms ease",
               borderColor: LINE,
               backgroundColor: FILL,
             };
