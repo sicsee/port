@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-05T00:00:00Z",
+  "title": "Design System: Nicolas David — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "canvas": { "role": "neutral", "displayName": "Signal Black", "canonical": "#000000", "tonalRamp": ["#000000", "#0c0c0c", "#1a1a1a", "#2e2e2e", "#454545", "#6a6a6a", "#9c9c9c", "#e6e6e6"] },
+      "paper": { "role": "neutral", "displayName": "Manila Paper", "canonical": "#f4efe4", "tonalRamp": ["#34302a", "#6e665b", "#8a8174", "#b3a998", "#cbc0a6", "#dcd3bf", "#e9e2d3", "#f4efe4"] },
+      "heading": { "role": "neutral", "displayName": "Void White", "canonical": "#ffffff", "tonalRamp": ["#7a7a7a", "#9a9a9a", "#b8b8b8", "#cfcfcf", "#e2e2e2", "#f0f0f0", "#f8f8f8", "#ffffff"] },
+      "body-ink": { "role": "neutral", "displayName": "Ink Grey", "canonical": "#d4d4d4", "tonalRamp": ["#52595c", "#6e7376", "#8a8e91", "#a7abae", "#c0c3c5", "#d4d6d8", "#e4e5e6", "#f2f2f3"] },
+      "muted": { "role": "neutral", "displayName": "Faded Pencil", "canonical": "#a3a3a3", "tonalRamp": ["#4a4a4a", "#616161", "#787878", "#8f8f8f", "#a3a3a3", "#b5b5b5", "#c8c8c8", "#dcdcdc"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "#404040", "tonalRamp": ["#171717", "#262626", "#333333", "#4a4a4a", "#5e5e5e", "#707070", "#888888", "#a5a5a5"] },
+      "chip-bg": { "role": "neutral", "displayName": "Chip Bed", "canonical": "#171717", "tonalRamp": ["#101010", "#171717", "#1f1f1f", "#2a2a2a", "#3a3a3a", "#4d4d4d", "#616161", "#7a7a7a"] },
+      "accent": { "role": "primary", "displayName": "Signal White (dark accent)", "canonical": "#ffffff", "tonalRamp": ["#8f8f8f", "#a8a8a8", "#c0c0c0", "#d6d6d6", "#e6e6e6", "#f2f2f2", "#fafafa", "#ffffff"] },
+      "teal-signal": { "role": "primary", "displayName": "Fountain Teal", "canonical": "#0f766e", "tonalRamp": ["#0b4a44", "#0f5f57", "#147a6f", "#22857a", "#3f9a8f", "#5eb3a8", "#8fcdc4", "#c3e6e0"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Doto Display", "purpose": "Section prompts, heading titles, chip labels, stacked metric numbers. 900 weight, 0.05em tracking. Not for body copy." },
+      "body": { "displayName": "Atkinson Body", "purpose": "All prose, descriptions, blurbs. Humanist legibility at 1rem/1.625." },
+      "label": { "displayName": "Machine Mono", "purpose": "Counters, timestamps, ramp hints, placeholder paths. Wide tracking." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "All reveals and hover transitions. The system's default ease." },
+      { "name": "reveal-rise", "value": "opacity 0.5s ease-out-expo + translateY(16px -> 0)", "purpose": "Entrance of every `.reveal` element; staggered 50ms steps (50-450ms) via .reveal-delay-1..9." },
+      { "name": "chip-hover", "value": "border-color + color, 300ms cubic-bezier(0.4, 0, 0.2, 1); skill tag translateY(-2px)", "purpose": "Interaction feedback on chips/tags. Movement, never shadow." },
+      { "name": "carousel-step", "value": "transform 600ms + opacity 600ms ease", "purpose": "3D coverflow steps: translateX 64%/step, rotateY -34°/step, scale -6%/step, opacity 1/0.5/0.2/hidden." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Chip Tag",
+      "kind": "chip",
+      "refersTo": "chip-tag",
+      "description": "Resting instrument chip — the workhorse for skills and facts.",
+      "html": "<span class=\"ds-chip\"><span class=\"ds-chip-label\">react</span></span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--n800, #262626); background: var(--n900, #171717); border-radius: 4px; padding: 6px 12px; color: var(--n300, #d4d4d4); font-size: 0.8rem; line-height: 1.25; cursor: default; transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1); } .ds-chip:hover { border-color: var(--n600, #525252); } .ds-chip-label { font-family: var(--font-doto, 'Doto', sans-serif); font-weight: 900; letter-spacing: 0.05em; }"
+    },
+    {
+      "name": "Link Tag",
+      "kind": "button",
+      "refersTo": "chip-tag-hover",
+      "description": "Clickable chip used for every CTA/contact action — the system has no filled button.",
+      "html": "<a class=\"ds-link-tag\" href=\"#\"><svg class=\"ds-tag-icon\" viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 4h16v12H7l-3 3z\"/><path d=\"m10 8 4 4\"/><path d=\"m14 8-4 4\"/></svg><span class=\"ds-chip-label\">email</span></a>",
+      "css": ".ds-link-tag { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--n800, #262626); background: var(--n900, #171717); border-radius: 4px; padding: 6px 12px; color: var(--n300, #d4d4d4); font-size: 0.8rem; text-decoration: none; cursor: pointer; transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1); } .ds-link-tag:hover { border-color: var(--accent, #ffffff); color: var(--heading, #ffffff); } .ds-tag-icon { width: 16px; height: 16px; } .ds-chip-label { font-family: var(--font-doto, 'Doto', sans-serif); font-weight: 900; letter-spacing: 0.05em; }"
+    },
+    {
+      "name": "Section Heading (prompt)",
+      "kind": "custom",
+      "refersTo": "typography.display",
+      "description": "Terminal-style prompt introducing every section: raised accent plus Doto title.",
+      "html": "<h2 class=\"ds-section-heading\"><span class=\"ds-prompt\">*</span><span class=\"ds-heading-title\">experience</span></h2>",
+      "css": ".ds-section-heading { display: flex; align-items: baseline; gap: 8px; margin: 0; font-family: var(--font-doto, 'Doto', sans-serif); font-size: 1.125rem; line-height: 1.55; letter-spacing: 0.05em; font-weight: 900; color: var(--heading, #ffffff); } .ds-prompt { position: relative; top: -2px; font-size: 0.75rem; line-height: 1; color: var(--heading, #ffffff); } .ds-heading-title { letter-spacing: 0.05em; }"
+    },
+    {
+      "name": "Skill Chip",
+      "kind": "chip",
+      "refersTo": "chip-tag",
+      "description": "Skill instrument with icon and hover tooltip carrying proficiency + projects.",
+      "html": "<span class=\"ds-skill\"><i aria-hidden=\"true\">◆</i><span class=\"ds-chip-label\">react</span><span class=\"ds-skill-tip\"><span class=\"ds-tip-head\"><span class=\"ds-tip-level\">core stack</span><span class=\"ds-tip-dots\">●●●●○</span></span><span class=\"ds-tip-body\">daily driver — everything web goes through it.</span><span class=\"ds-tip-used\">used in: La Ascensión · Portfolio v1</span></span></span>",
+      "css": ".ds-skill { position: relative; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--n800, #262626); background: var(--n900, #171717); border-radius: 4px; padding: 6px 12px; color: var(--n300, #d4d4d4); font-size: 0.8rem; cursor: default; transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); } .ds-skill > i { font-style: normal; font-size: 1.1rem; line-height: 1; transition: color 0.3s; } .ds-skill:hover { border-color: var(--accent, #ffffff); color: var(--heading, #ffffff); transform: translateY(-2px); } .ds-skill:hover > i { color: var(--accent, #ffffff); } .ds-skill-tip { position: absolute; top: 100%; left: 50%; transform: translate(-50%, 6px); margin-top: 8px; width: 240px; z-index: 20; border: 1px solid var(--n700, #404040); background: var(--n900, #171717); border-radius: 3px; padding: 12px; text-align: left; font-size: 0.75rem; line-height: 1.5; font-family: var(--font-atkinson, sans-serif); color: var(--n300, #d4d4d4); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-skill:hover .ds-skill-tip { opacity: 1; visibility: visible; transform: translate(-50%, 0); } .ds-tip-head { display: flex; justify-content: space-between; align-items: baseline; } .ds-tip-level { font-family: var(--font-doto, 'Doto', sans-serif); font-weight: 900; font-size: 0.65rem; letter-spacing: 0.05em; color: var(--heading, #ffffff); } .ds-tip-dots { font-family: ui-monospace, monospace; font-size: 0.7rem; } .ds-tip-body { display: block; margin-top: 4px; opacity: 0.8; } .ds-tip-used { display: block; margin-top: 8px; font-size: 0.65rem; color: var(--n500, #737373); } .ds-chip-label { font-family: var(--font-doto, 'Doto', sans-serif); font-weight: 900; letter-spacing: 0.05em; }"
+    },
+    {
+      "name": "Carousel Slide",
+      "kind": "card",
+      "refersTo": "rounded.lg",
+      "description": "3D coverflow card: tonal border, transform-only depth, typographic fallback.",
+      "html": "<div class=\"ds-slide\"><div class=\"ds-slide-fallback\"><span class=\"ds-slide-path\">~/projects/velocegarage</span><span class=\"ds-slide-title\">VeloceGarage</span></div></div>",
+      "css": ".ds-slide { width: 320px; aspect-ratio: 16/10; border: 1px solid color-mix(in srgb, currentColor 20%, transparent); background: color-mix(in srgb, currentColor 6%, transparent); border-radius: 6px; overflow: hidden; } .ds-slide-fallback { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; } .ds-slide-path { font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; opacity: 0.5; } .ds-slide-title { font-family: var(--font-doto, 'Doto', sans-serif); font-weight: 900; font-size: 1.375rem; letter-spacing: 0.05em; color: var(--heading, #ffffff); }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Header navigation link — muted at rest, plain white on hover, no underline or pill.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">home</a><a class=\"ds-nav-link ds-nav-active\" href=\"#\">projects</a><a class=\"ds-nav-link\" href=\"#\">contact</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: baseline; gap: 24px; font-family: var(--font-atkinson, sans-serif); font-size: 0.875rem; } .ds-nav-link { color: var(--n400, #a3a3a3); text-decoration: none; transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1); } .ds-nav-link:hover { color: var(--heading, #ffffff); } .ds-nav-active { color: var(--heading, #ffffff); }"
+    },
+    {
+      "name": "Heatmap Row",
+      "kind": "custom",
+      "refersTo": "rounded.sm",
+      "description": "Contribution grid fragment: 12px cells, 2px gaps, 5-step tonal ramp.",
+      "html": "<div class=\"ds-heat\" aria-hidden=\"true\"><span class=\"ds-cell\" style=\"background: var(--contrib-a, #262626)\"></span><span class=\"ds-cell\" style=\"background: var(--contrib-b, #525252)\"></span><span class=\"ds-cell\" style=\"background: var(--contrib-c, #a3a3a3)\"></span><span class=\"ds-cell\" style=\"background: var(--contrib-d, #d4d4d4)\"></span><span class=\"ds-cell\" style=\"background: var(--contrib-e, #ffffff)\"></span><span class=\"ds-cell\"></span><span class=\"ds-cell\"></span><span class=\"ds-cell\"></span><span class=\"ds-cell\"></span><span class=\"ds-cell\"></span></div>",
+      "css": ".ds-heat { display: grid; grid-template-rows: repeat(2, 12px); grid-auto-flow: column; grid-auto-columns: 12px; gap: 2px; } .ds-cell { width: 12px; height: 12px; border-radius: 2px; background: var(--n800, #262626); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Terminal",
+    "overview": "A calibrated command line that never raises its voice: `$`-precise section prompts (rendered `* title`), greyscale at rest, dot-matrix stamps over humanist body copy. Depth is never painted — 1px tonal borders and fills only, hover states move instead of lift. The light mode flips to warm Manila paper with a single Fountain Teal as accent. Motion confirms rather than performs: 16px rise-and-fade entrances on a 50ms stepped stagger are the largest resting gesture.",
+    "keyCharacteristics": [
+      "greyscale-first; accent is punctuation, not paint",
+      "dot-matrix (Doto 900) headings over quiet humanist body copy (Atkinson Hyperlegible)",
+      "1px hairlines and tonal fills instead of shadows and gradients",
+      "terminal prompts (`* …`) as section headers; lowercase copy voice",
+      "reveals: fade + 16px rise, staggered 50ms; flat at rest, precision on interaction"
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Accent (white or teal) is punctuation: ≤ a handful of touched pixels per viewport. If a screen needs accent to be readable, it is wrong.", "section": "colors" },
+      { "name": "The Prompt Rule", "body": "Every section is introduced by a terminal-style prompt — `* title` — never by a decorative banner or icon.", "section": "colors" },
+      { "name": "The Stamp Rule", "body": "Doto exists only in displays: headings, markers, chip labels, big metric numbers. Never body text and never long labels — dot-matrix at reading size is texture, not prose.", "section": "typography" },
+      { "name": "The Lowercase Line", "body": "Narrative copy is written lowercase (voice commitment), not styled `lowercase` — the runts are data, not decoration.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Nothing is lifted by shadow, ever. Hover states move (2px rise) and recolor — they never \"float\".", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep everything greyscale at rest; introduce accent only on meaning (hover, selection, current-state, prompt marks).",
+      "Do separate sections with 1px hairlines + a `* title` prompt at ~0.05em tracking.",
+      "Do stagger entrances 50ms apart (50–450ms) with translateY(16px) + fade, cubic-bezier(0.16, 1, 0.3, 1).",
+      "Do label machine facts in mono with wide tracking (`02 / 06`, `~/projects/slug`).",
+      "Do let the carousel express depth with transforms/opacity only."
+    ],
+    "donts": [
+      "Don't use gradients, neon, or glow anywhere — flatness is the identity (confirmed anti-reference).",
+      "Don't round beyond 6px — no pills, no rounded-2xl cards (confirmed anti-reference).",
+      "Don't add box-shadows — even on hover states (The Flat-By-Default Rule).",
+      "Don't set Doto below ~0.65rem or for full sentences (The Stamp Rule).",
+      "Don't ship accent-heavy screens: if white/teal dominates a viewport, the hierarchy broke.",
+      "Don't replace the grain overlay with heavier decorative textures — 7% opacity, always."
+    ]
+  }
+}
