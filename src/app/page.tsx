@@ -1,15 +1,42 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
+import { Header } from '@/components/layout/Header';
+import { Experience, Education } from '@/components/experience/Experience';
+import { Projects, Skills } from '@/components/projects/Projects';
+import { Contact } from '@/components/contact/Contact';
+import { Contributions } from '@/components/github/Contributions';
+import { Footer } from '@/components/layout/Footer';
+import { intro, site } from '@/content/site';
 
 export default function Home() {
   return (
-    <main className="content space-y-5 p-6 md:p-7 lg:p-10">
-      <div className="sm:flex sm:justify-between sm:items-center">
-        <Header />
-        <Navbar />
-      </div>
-      <Hero />
-    </main>
+    <>
+      <Header />
+
+      <main className="mx-auto w-full max-w-3xl space-y-4 px-4">
+        <section className="pt-0">
+          <h1 className="reveal reveal-delay-1 font-pixel text-2xl leading-tight font-black tracking-wide sm:text-3xl">
+            {site.role}
+          </h1>
+          {intro.split('\n').map((paragraph, index) => (
+            <p
+              key={paragraph.slice(0, 24)}
+              className={`reveal mt-2 text-neutral-300 first:mt-3 ${index < 8 ? `reveal-delay-${index + 2}` : 'reveal-delay-9'}`}
+            >
+              {paragraph}
+            </p>
+          ))}
+        </section>
+
+        <Experience />
+        <Education />
+        <Projects />
+        <Skills />
+        <Contact />
+        <Contributions />
+      </main>
+
+      <footer className="mx-auto w-full max-w-3xl py-4 px-4">
+        <Footer />
+      </footer>
+    </>
   );
 }
