@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Experience, Education } from '@/components/experience/Experience';
 import { Projects, Skills } from '@/components/projects/Projects';
@@ -13,7 +14,10 @@ export default function Home() {
 
       <main className="mx-auto w-full max-w-3xl space-y-4 px-4">
         <section className="pt-0">
-          <h1 className="reveal reveal-delay-1 font-pixel text-2xl leading-tight font-black tracking-wide sm:text-3xl">
+          <h1
+            className="print-line font-pixel text-2xl leading-tight font-black tracking-wide sm:text-3xl"
+            style={{ '--print-steps': site.role.length } as CSSProperties}
+          >
             {site.role}
           </h1>
           {intro.split('\n').map((paragraph, index) => (

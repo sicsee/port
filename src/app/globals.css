@@ -95,6 +95,10 @@ html.light {
 
   body {
     @apply bg-black text-neutral-300 text-base;
+    /* theme cross-fade: ease the palette swap when html.light toggles */
+    transition:
+      background-color 250ms ease,
+      color 250ms ease;
   }
 
   /* grain overlay (atxl.in style) */
@@ -113,6 +117,7 @@ html.light {
     line-height: 1.4;
     color: var(--heading);
     font-weight: 700;
+    transition: color 250ms ease;
   }
 
   h2,
@@ -126,6 +131,7 @@ html.light {
     letter-spacing: 0.05em;
     font-weight: 900;
     color: var(--heading);
+    transition: color 250ms ease;
   }
 
   a {
@@ -320,6 +326,7 @@ html.light {
 
   .prompt {
     color: var(--heading);
+    transition: color 250ms ease;
   }
 }
 
@@ -344,6 +351,66 @@ html.light {
       transition: none;
       opacity: 1;
       transform: none;
+    }
+  }
+
+  /* typed boot-in for the hero title: one-shot CSS "printer" sequence */
+  .print-line {
+    animation: print-clip 0.8s steps(var(--print-steps, 16), end) forwards;
+  }
+
+  .print-line::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 0.85em;
+    margin-left: 0.12em;
+    background: var(--heading);
+    vertical-align: -0.08em;
+    opacity: 0;
+    animation:
+      caret-appear 1ms 0.8s 1 forwards,
+      caret-blink 0.5s step-end 3 0.85s,
+      caret-fade 0.3s ease-out 2.45s 1 forwards;
+  }
+
+  @keyframes print-clip {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0 -0.1em 0 0);
+    }
+  }
+
+  @keyframes caret-appear {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes caret-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes caret-fade {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .print-line {
+      animation: none;
+      clip-path: none;
+    }
+    .print-line::after {
+      display: none;
     }
   }
 
