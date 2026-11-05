@@ -220,9 +220,11 @@ html.light {
 
   /* hover trajectory: lift the chip's whole stacking context (`.reveal`
      wrappers create one via will-change) so the tooltip paints above the
-     chips that come after it in the DOM */
+     chips that come after it in the DOM. position:
+     relative is required — z-index is ignored on static inline spans */
   .reveal:has(.skill-tag:hover),
   .reveal:has(.skill-tag:focus-within) {
+    position: relative;
     z-index: 55;
   }
 
