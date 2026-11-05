@@ -131,7 +131,7 @@ export type Skill = {
 };
 
 export const skillsIntro =
-  "tools i've picked up building web apps with react, node and postgresql.";
+  "tools i've picked up building web apps with react and node.";
 
 export const skills: Skill[] = [
   {
@@ -169,28 +169,14 @@ export const skills: Skill[] = [
     ],
   },
   {
-    name: 'Framer Motion',
-    icon: 'devicon-framermotion-original',
-    level: 3,
-    blurb: 'have built for micro-interactions and page transitions.',
-    usedIn: [{ title: 'Portfolio v1', slug: 'portfolio-v1' }],
-  },
-  {
     name: 'Node.js',
-    icon: 'devicon-nodejs-plain devicon-nodejsdevicon',
+    icon: 'devicon-nodejs-plain',
     level: 4,
     blurb: 'apis, cron jobs and bots — the backend side of my projects.',
     usedIn: [
       { title: 'La Ascensión', slug: 'la-ascensao' },
       { title: 'Habit Tracker', slug: 'habit-tracker' },
     ],
-  },
-  {
-    name: 'PostgreSQL',
-    icon: 'devicon-postgresql-plain devicon-postgresql-original',
-    level: 4,
-    blurb: 'schema design and game data — inventory belongs in the database.',
-    usedIn: [{ title: 'La Ascensión', slug: 'la-ascensao' }],
   },
   {
     name: 'MySQL',
@@ -201,53 +187,17 @@ export const skills: Skill[] = [
   },
   {
     name: 'PHP',
-    icon: 'devicon-php-plain devicon-php-original',
+    icon: 'devicon-php-plain',
     level: 3,
     blurb: 'where my backend journey started — vps deploys included.',
     usedIn: [{ title: 'Habit Tracker', slug: 'habit-tracker' }],
   },
   {
-    name: 'Luau',
-    icon: 'devicon-lua-plain devicon-lua-original',
-    level: 3,
-    blurb: 'build roblox tooling with raycasting and datastore tricks.',
-    usedIn: [{ title: 'Roblox Aim Trainer', slug: 'aim-trainer' }],
-  },
-  {
-    name: 'Stripe',
-    level: 4,
-    blurb: 'checkout sessions, webhooks and the 80% that is failure paths.',
-    usedIn: [{ title: 'La Ascensión', slug: 'la-ascensao' }],
-  },
-  {
     name: 'Git',
-    icon: 'devicon-git-plain devicon-git-original',
+    icon: 'devicon-git-plain',
     level: 4,
     blurb: 'branch, rebase, review — daily workflow tool.',
     usedIn: [{ title: 'every project' }],
-  },
-  {
-    name: 'Docker',
-    icon: 'devicon-docker-plain devicon-docker-original',
-    level: 2,
-    blurb: 'explored containerized deploys for side projects.',
-    usedIn: [],
-  },
-  {
-    name: 'Vercel',
-    icon: 'devicon-vercel-original',
-    level: 4,
-    blurb: 'where most of my web projects live after the last commit.',
-    usedIn: [
-      { title: 'VeloceGarage', slug: 'velocegarage' },
-      { title: 'Portfolio v1', slug: 'portfolio-v1' },
-    ],
-  },
-  {
-    name: 'Obsidian',
-    level: 4,
-    blurb: 'zettelkasten and dataview — knowledge bases for study.',
-    usedIn: [{ title: 'SI e Sociedade', slug: 'si-sociedade' }],
   },
 ];
 

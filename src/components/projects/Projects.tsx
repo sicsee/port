@@ -134,7 +134,7 @@ export function Skills() {
     <section id="skills" className="border-t border-neutral-700 py-5 sm:py-6">
       <SectionHeader title="skills" className="mb-4" />
       <p className="mb-4 text-neutral-400">{skillsIntro}</p>
-      <ul className="flex flex-wrap items-start gap-[var(--gap-tight)]" aria-label="Skills">
+      <ul className="flex flex-wrap items-start gap-x-3 gap-y-3" aria-label="Skills">
         {skills.map((skill, index) => (
           <SkillChip key={skill.name} skill={skill} index={index} />
         ))}

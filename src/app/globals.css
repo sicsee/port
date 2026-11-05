@@ -183,11 +183,12 @@ html.light {
   .tech-tag {
     display: inline-flex;
     align-items: center;
+    gap: var(--spacing-2);
     cursor: default;
     border: 1px solid var(--n800);
     background-color: var(--n900);
     border-radius: var(--spacing-1);
-    padding: var(--spacing-1) var(--spacing-3);
+    padding: var(--spacing-2) calc(var(--spacing-3) + 2px);
     font-size: 0.875rem;
     line-height: 1.25;
     color: var(--n300);
