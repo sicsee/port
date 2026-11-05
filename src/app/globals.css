@@ -13,7 +13,7 @@
   --heading: #fff;
   --n300: #d4d4d4;
   --n400: #a3a3a3;
-  --n500: #737373;
+  --n500: #787878;
   --n600: #525252;
   --n700: #404040;
   --n800: #262626;
@@ -101,6 +101,12 @@ html.light {
       color 250ms ease;
   }
 
+  p {
+    line-height: 1.625;
+    /* avoid single-word orphan lines ("straggler") — graceful degradation */
+    text-wrap: pretty;
+  }
+
   /* grain overlay (atxl.in style) */
   body::before {
     content: "";
@@ -145,6 +151,12 @@ html.light {
   ::selection {
     background: var(--accent);
     color: var(--canvas);
+  }
+
+  /* visible keyboard focus, hairline-style so it fits the flat system */
+  :focus-visible {
+    outline: 1px solid var(--heading);
+    outline-offset: 2px;
   }
 }
 
@@ -331,8 +343,10 @@ html.light {
 }
 
 @layer utilities {
-  /* scroll reveal (JS adds .in-view, see components/Reveal.tsx) */
-  .reveal {
+  /* scroll reveal (JS adds .in-view, see components/RevealObserver.tsx).
+     Gated behind html.can-reveal (inline <head> script): progressive
+     enhancement — no JS means content renders fully visible, never hidden. */
+  .can-reveal .reveal {
     opacity: 0;
     transform: translateY(16px);
     transition:
@@ -341,13 +355,13 @@ html.light {
     will-change: opacity, transform;
   }
 
-  .reveal.in-view {
+  .can-reveal .reveal.in-view {
     opacity: 1;
     transform: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .reveal {
+    .can-reveal .reveal {
       transition: none;
       opacity: 1;
       transform: none;

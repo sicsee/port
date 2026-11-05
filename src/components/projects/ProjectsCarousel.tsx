@@ -58,7 +58,7 @@ function Preview({ project }: { project: CarouselProject }) {
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-center gap-2 p-6 text-center">
-      <p className="font-mono text-[11px] opacity-50">~/projects/{project.slug}</p>
+      <p className="font-mono text-xs text-neutral-400">~/projects/{project.slug}</p>
       <p className="font-pixel text-xl font-black tracking-wider sm:text-2xl">
         {project.title}
       </p>
@@ -259,7 +259,7 @@ export function ProjectsCarousel({
         </div>
 
         <p className="mt-1 text-sm opacity-70">{current.tagline}</p>
-        <p className="mt-2 font-mono text-xs opacity-50">
+        <p className="mt-2 font-mono text-xs text-neutral-400">
           {current.stack.join(" · ").toLowerCase()}
         </p>
 

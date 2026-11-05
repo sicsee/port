@@ -38,7 +38,8 @@ export const viewport: Viewport = {
 };
 
 // Prevents theme flash: applies the persisted/system light class before paint.
-const themeScript = `(function(){try{var t=localStorage.getItem("theme");var prefersLight=window.matchMedia("(prefers-color-scheme: light)").matches;if(t==="light"||(!t&&prefersLight)){document.documentElement.classList.add("light")}}catch(e){}})();`;
+// Also gates scroll-reveal hiding: without JS the content stays fully visible.
+const themeScript = `document.documentElement.classList.add("can-reveal");(function(){try{var t=localStorage.getItem("theme");var prefersLight=window.matchMedia("(prefers-color-scheme: light)").matches;if(t==="light"||(!t&&prefersLight)){document.documentElement.classList.add("light")}}catch(e){}})();`;
 
 export default function RootLayout({
   children,

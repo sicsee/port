@@ -75,7 +75,7 @@ function CaseImage({ project }: { project: CarouselProject }) {
           className="flex h-full w-full flex-col items-center justify-center gap-2"
           style={{ backgroundColor: "color-mix(in srgb, currentColor 6%, transparent)" }}
         >
-          <p className="font-mono text-[11px] opacity-50">~/projects/{project.slug}</p>
+          <p className="font-mono text-xs text-neutral-400">~/projects/{project.slug}</p>
           <p className="font-pixel text-xl font-black tracking-wider">{project.title}</p>
         </div>
       )}
@@ -147,14 +147,14 @@ export default async function CaseStudyPage({
             {study.problem ? (
               <section className="mt-10">
                 <SectionHeader title="context" className="mb-3" />
-                <p className="opacity-80">{study.problem}</p>
+                <p className="max-w-[65ch] opacity-80">{study.problem}</p>
               </section>
             ) : null}
 
             {study.solution ? (
               <section className="mt-10">
                 <SectionHeader title="approach" className="mb-3" />
-                <p className="opacity-80">{study.solution}</p>
+                <p className="max-w-[65ch] opacity-80">{study.solution}</p>
               </section>
             ) : null}
 
@@ -172,7 +172,7 @@ export default async function CaseStudyPage({
                       </span>
                       <p>
                         <span className="font-semibold">{decision.label}</span>
-                        <span className="opacity-70"> — {decision.detail}</span>
+                        <span className="opacity-70">: {decision.detail}</span>
                       </p>
                     </li>
                   ))}

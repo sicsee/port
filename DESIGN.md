@@ -87,7 +87,7 @@ A near-monochrome system with two states: the dark terminal (default) and a pape
 - **Void White** (`#ffffff`): headings, prompt marks, `* ` glyphs, active timeline dot.
 - **Ink Grey / Body** (`#d4d4d4` dark · `#34302a` light): body copy on both themes.
 - **Faded Pencil** (`#a3a3a3` mute): secondary text, dates, descriptions.
-- **Faint Lead** (`#737373` faint): tertiary text, hints, the "##" in markers and durations.
+- **Faint Lead** (`#787878` faint): tertiary text, hints, the "##" in markers and durations. 4.75:1 on Signal Black — raised from the original `#737373` (4.4:1) to clear WCAG AA.
 - **Hairline** (`#404040` dark): section separators, timeline line, skin of the interface.
 - **Chip Border / Chip Bed** (`#262626` / `#171717`): resting chip edges and fill.
 - **Manila Paper** (`#f4efe4`): light theme canvas — aged paper, not white; the whole light palette is warm (browns, `#34302a`, `#8a8174`) to keep the chat-printer feel.

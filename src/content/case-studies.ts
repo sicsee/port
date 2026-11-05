@@ -67,17 +67,17 @@ export const caseStudies: CaseStudy[] = [
     problem:
       "an independent clothing brand was selling exclusively through instagram dms — every order needed manual pricing, manual stock checks and manual payment coordination. growth became impossible.",
     solution:
-      "a complete e-commerce: product catalogue with a persistent cart, stripe checkout with payment validation, an admin panel for inventory, and automatic order records — the whole pipeline from click to payment runs without the owner touching anything.",
+      "a complete e-commerce: product catalogue with a persistent cart, stripe checkout with payment validation, an admin panel for inventory, and automatic order records. the whole pipeline from click to payment runs without the owner touching anything.",
     decisions: [
       {
         label: "stripe + webhooks",
         detail:
-          "checkout on stripe, order state driven by idempotent webhook handlers instead of trusting redirects — paid means verified, not 'user came back'.",
+          "checkout on stripe, order state driven by idempotent webhook handlers instead of trusting redirects: paid means verified, not 'user came back'.",
       },
       {
         label: "jwt auth",
         detail:
-          "stateless token auth for the admin panel; purchased a clean separation between customer actions and inventory operations.",
+          "stateless token auth for the admin panel, which gives a clean separation between customer actions and inventory operations.",
       },
       {
         label: "relational schema",
@@ -92,7 +92,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     lessons: [
       "integrating payments is 20% the sdk and 80% handling the failure paths",
-      "model the order lifecycle early — retrofitting states into a schema is expensive",
+      "model the order lifecycle early: retrofitting states into a schema is expensive",
     ],
   },
 ];
