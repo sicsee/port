@@ -218,6 +218,14 @@ html.light {
     position: relative;
   }
 
+  /* hover trajectory: lift the chip's whole stacking context (`.reveal`
+     wrappers create one via will-change) so the tooltip paints above the
+     chips that come after it in the DOM */
+  .reveal:has(.skill-tag:hover),
+  .reveal:has(.skill-tag:focus-within) {
+    z-index: 55;
+  }
+
   @media (hover: hover) {
     .skill-tag:hover {
       border-color: var(--accent);
@@ -247,7 +255,7 @@ html.light {
     transform: translate(-50%, 6px);
     margin-top: 0.5rem;
     width: 15rem;
-    z-index: 20;
+    z-index: 60;
     border: 1px solid var(--n700);
     background: var(--n900);
     border-radius: calc(var(--spacing-1) * 0.75);
