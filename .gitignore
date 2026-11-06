@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local planning artifacts — only the roadmap README goes public
+projetos-port/*
+!projetos-port/README.md
