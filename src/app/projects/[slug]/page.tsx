@@ -30,12 +30,18 @@ export async function generateMetadata({
 }
 
 function StatusBadge({ status }: { status: CaseStudy["status"] }) {
+  const label =
+    status === "shipped"
+      ? "✓ shipped"
+      : status === "course exercise"
+        ? "· course exercise"
+        : "· in development";
   return (
     <span
       className="text-xs font-mono tracking-wider opacity-70"
       aria-label={`project status: ${status}`}
     >
-      {status === "shipped" ? "✓ shipped" : "· in development"}
+      {label}
     </span>
   );
 }

@@ -34,7 +34,9 @@ function EducationItem({ item, index }: { item: Education; index: number }) {
         <div className="timeline-header">
           <div>
             <h3>{item.degree}</h3>
-            <p className="text-neutral-400">{item.school}</p>
+            {item.school ? (
+              <p className="text-neutral-400">{item.school}</p>
+            ) : null}
           </div>
           <p className="text-neutral-500">{item.dates}</p>
         </div>

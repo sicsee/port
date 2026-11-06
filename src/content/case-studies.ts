@@ -12,7 +12,7 @@ export interface CaseStudy {
   slug: string; // must match carouselProjects[].slug
   role: string;
   period: string;
-  status: "shipped" | "in development";
+  status: "shipped" | "in development" | "course exercise";
   problem: string;
   solution: string;
   decisions: CaseDecision[];
@@ -26,69 +26,69 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "velocegarage",
     role: "design + development",
-    period: "2025",
-    status: "shipped",
+    period: "técnico exercise",
+    status: "course exercise",
     problem:
-      "a local auto repair shop had no online presence at all — customers found it only by word of mouth, and booking meant showing up in person or hoping someone answered the phone.",
+      "a course brief: build a sales page for a diecast car-miniatures shop. the page had to make the catalog feel worth buying, load fast, and stay editable by someone who won't touch js.",
     solution:
-      "a single-purpose landing page that gets one thing right: help the visitor reach the shop. mobile-first layout, service list with prices, and a working contact form — all shipped without a framework to keep it fast and maintainable by anyone.",
+      "a single-purpose landing page: product showcase with prices, contact/lead form, mobile-first, all in vanilla html/css/js with zero framework runtime — shipped the way the owner of a small shop would need to maintain it.",
     decisions: [
       {
         label: "no framework",
         detail:
-          "vanilla html/css/js keeps the page light and means the owner's nephew can edit it without learning react. performance beats optionality for a one-page site.",
+          "vanilla html/css/js keeps the page light and means anyone can edit it without learning react. performance beats optionality for a one-page site.",
       },
       {
         label: "local-first SEO",
         detail:
-          "structured metadata and complete semantic html so the page surfaces when people search for a repair shop in the area.",
+          "structured metadata and complete semantic html so the page surfaces when people search for the products.",
       },
       {
         label: "one clear action",
         detail:
-          "every section pushes the visitor to the same next step (call or message) instead of exploring the site — conversion over content.",
+          "every section pushes the visitor to the same next step instead of exploring the site — conversion over content.",
       },
     ],
     metrics: [
-      { value: "90+", label: "lighthouse performance" },
-      { value: "100%", label: "accessibility practices" },
-      { value: "0s", label: "framework runtime" },
+      { value: "0", label: "framework dependencies" },
+      { value: "1", label: "page, one job: sell" },
+      { value: "vercel", label: "hosting (redeploy pending)" },
     ],
     lessons: [
       "performance is a design decision before it's a technical one",
-      "clients value being able to edit their own site more than a fancy stack",
+      "a page anyone can edit is worth more than a fancier stack",
     ],
   },
   {
     slug: "la-ascensao",
     role: "full stack",
-    period: "2024",
-    status: "shipped",
+    period: "técnico capstone",
+    status: "course exercise",
     problem:
-      "an independent clothing brand was selling exclusively through instagram dms — every order needed manual pricing, manual stock checks and manual payment coordination. growth became impossible.",
+      "my técnico capstone: la ascensión, a b2b services company (funeral plans) still coordinating everything manually — pricing, availability and payments handled person-to-person, with no online presence to receive customers.",
     solution:
-      "a complete e-commerce: product catalogue with a persistent cart, stripe checkout with payment validation, an admin panel for inventory, and automatic order records. the whole pipeline from click to payment runs without the owner touching anything.",
+      "the public landing plus a purchase path: plan catalog with a persistent cart, stripe checkout flow, plan management in an admin panel, and jwt auth separating customer actions from internal ones. end-to-end: from page visit to a recorded order.",
     decisions: [
       {
         label: "stripe + webhooks",
         detail:
-          "checkout on stripe, order state driven by idempotent webhook handlers instead of trusting redirects: paid means verified, not 'user came back'.",
+          "checkout on stripe, order state driven by webhook handlers instead of trusting redirects: paid means verified, not 'user came back'.",
       },
       {
         label: "jwt auth",
         detail:
-          "stateless token auth for the admin panel, which gives a clean separation between customer actions and inventory operations.",
+          "stateless token auth for the admin panel, which gives a clean separation between customer actions and management operations.",
       },
       {
         label: "relational schema",
         detail:
-          "postgresql for stock and orders: inventory correctness belongs in the database, not in app logic.",
+          "postgresql for orders and plan data: correctness of the catalog belongs in the database, not in app logic.",
       },
     ],
     metrics: [
-      { value: "1", label: "runway from dm → automatic" },
-      { value: "full", label: "order pipeline automated" },
-      { value: "admin", label: "panel for inventory" },
+      { value: "webhooks", label: "order state verification" },
+      { value: "jwt", label: "admin/customer separation" },
+      { value: "postgres", label: "orders + catalog schema" },
     ],
     lessons: [
       "integrating payments is 20% the sdk and 80% handling the failure paths",

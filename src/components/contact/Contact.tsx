@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, FileText } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/content/site";
@@ -7,7 +7,6 @@ const contacts = [
   { label: "email", href: `mailto:${site.email}`, icon: Mail },
   { label: "github", href: site.links.github, icon: Github },
   { label: "linkedin", href: site.links.linkedin, icon: Linkedin },
-  { label: "resume", href: site.links.resume, icon: FileText },
 ];
 
 export function Contact() {

@@ -6,20 +6,19 @@ export const site = {
   role: 'Backend Developer',
   title: 'Nicolas David',
   description:
-    'Full stack developer building clean, performant web applications with React, Node.js and PostgreSQL.',
-  email: 'nicolas@nicolasdavid.dev',
+    'Backend developer in training — computer science student building real systems: payments, auth, bots and cron jobs.',
+  email: 'nicolasdsgodinho@gmail.com',
   links: {
     github: 'https://github.com/sicsee',
-    linkedin: 'https://linkedin.com/in/nicolasdavid',
-    // TODO: attach real resume file to /public and point to it
-    resume: '/resume.pdf',
+    linkedin: 'https://linkedin.com/in/sicsee',
+    // TODO: attach real resume file to /public before shipping a resume chip again
   },
   githubUser: 'sicsee',
 } as const;
 
 export const intro =
-  "hey, i'm nicolas — a full stack developer who builds clean, performant web apps with react, node and postgresql.\n" +
-  "apart from code, you'll find me tinkering with game scripts or deep in a knowledge base.";
+  "hey, i'm nicolas — computer science student sharpening as a backend developer.\n" +
+  "i like the unglamorous side of systems: payments that verify, databases that lie less, and the failure paths everyone skips.";
 
 // TODO: review/replace with real work history (periods, durations, descriptions).
 export type Experience = {
@@ -33,36 +32,37 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
-    role: 'Freelance Web Developer',
-    company: 'Self-employed',
+    role: 'Self-Directed Projects',
+    company: 'Personal',
     dates: '2024 — now',
     duration: 'ongoing',
-    description:
-      'designing and shipping full stack web apps for clients — e-commerce with stripe, landing pages and custom tools.',
     current: true,
-  },
-  {
-    role: 'Independent Projects',
-    company: 'Personal',
-    dates: '2022 — 2024',
-    duration: '2 years',
     description:
-      'built roblox tooling (luau, raycasting), a habit tracker with a telegram bot, and obsidian knowledge-base workflows.',
+      'no formal job yet — and the portfolio says that plainly. meanwhile: a técnico capstone with real payments and auth, a telegram bot on php/mysql, game-script tooling, and this very site. self-taught, self-directed, shipped.',
   },
 ];
 
-// TODO: replace with real education history.
+// real education history (school omitted where the user didn't name it)
 export type Education = {
   degree: string;
-  school: string;
+  school?: string;
   dates: string;
 };
 
 export const education: Education[] = [
   {
     degree: 'Computer Science',
-    school: 'Your University',
-    dates: '2022 — 2026',
+    school: 'Newton Paiva',
+    dates: 'in progress',
+  },
+  {
+    degree: 'Systems Development (technical diploma)',
+    dates: '2024 — 2025',
+  },
+  {
+    degree: 'English studies',
+    school: 'Wizard',
+    dates: 'in progress',
   },
 ];
 
@@ -75,44 +75,39 @@ export type Project = {
   href?: string;
 };
 
-// TODO: add real repo/demo URLs.
 export const projects: Project[] = [
   {
     slug: 'la-ascensao',
     title: 'La Ascensión',
-    description: 'E-commerce for a clothing brand — cart, checkout and payments via stripe.',
-    // href: "https://…",
+    description:
+      'B2B funeral-services site with a purchase path — my técnico capstone: cart, stripe checkout and plan management.',
   },
   {
     slug: 'aim-trainer',
     title: 'Roblox Aim Trainer',
     description: 'Aim trainer in the style of aim lab / kovaaks, built with luau and raycasting.',
-    // href: "https://…",
   },
   {
     slug: 'habit-tracker',
     title: 'Habit Tracker',
     description: 'Habit tracker with a contribution-style heatmap, dashboard and a telegram bot.',
-    // href: "https://…",
   },
   {
     slug: 'si-sociedade',
     title: 'SI e Sociedade',
     description:
       'Knowledge base for an information-society course, organized as a zettelkasten with dataview.',
-    // href: "https://…",
   },
   {
     slug: 'velocegarage',
     title: 'VeloceGarage',
-    description: 'Landing page for an auto repair shop — fast, responsive and self-contained.',
-    // href: "https://…",
+    description:
+      'Landing page for a diecast car-miniatures shop — vanilla html/css/js, fast and self-maintainable.',
   },
   {
     slug: 'portfolio-v1',
     title: 'Portfolio v1',
     description: 'First version of this portfolio — next.js 14 with framer motion.',
-    // href: "https://…",
   },
 ];
 
