@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Atkinson_Hyperlegible, Doto } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import { site } from "@/content/site";
 import { RevealObserver } from "@/components/RevealObserver";
 import "./globals.css";
@@ -56,6 +57,8 @@ export default function RootLayout({
       <body className="antialiased" suppressHydrationWarning>
         <RevealObserver />
         {children}
+        {/* vercel web analytics — no cookies, respects DNT defaults */}
+        <Analytics />
       </body>
     </html>
   );
